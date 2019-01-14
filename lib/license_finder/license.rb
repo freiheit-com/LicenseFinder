@@ -18,12 +18,13 @@ module LicenseFinder
       end
 
       def find_by_name(name)
-        name ||= 'unknown'
+        name ||= 'none'
         all.detect { |l| l.matches_name? l.stripped_name(name) } || Definitions.build_unrecognized(name)
       end
 
       def find_by_text(text)
-        all.detect { |l| l.matches_text? text }
+        existing = all.detect { |l| l.matches_text? text }
+        existing ? existing : Definitions.build_unrecognized('unknown')
       end
     end
 

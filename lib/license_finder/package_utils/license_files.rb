@@ -18,7 +18,7 @@ module LicenseFinder
     def find(options = {})
       paths_of_candidate_files
         .map { |path| PossibleLicenseFile.new(path, options) }
-        .reject { |file| file.license.nil? }
+        # .reject { |file| file.license.nil? }
     end
 
     private
