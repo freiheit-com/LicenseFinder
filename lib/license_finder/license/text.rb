@@ -5,11 +5,13 @@ module LicenseFinder
     module Text
       SPACES = /\s+/
       QUOTES = /['`"]{1,2}/
+      ENUMS = /(^\d+\.\s+)|(^\s+\*\s+)/
       PLACEHOLDERS = /<[^<>]+>/
 
       def self.normalize_punctuation(text)
-        text.gsub(SPACES, ' ')
+        text.gsub(ENUMS, '')
             .gsub(QUOTES, '"')
+            .gsub(SPACES, ' ')
             .strip
       end
 
