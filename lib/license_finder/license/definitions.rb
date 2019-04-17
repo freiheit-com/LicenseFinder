@@ -93,7 +93,7 @@ module LicenseFinder
 
         License.new(
           short_name:  'BSD2',
-          pretty_name: '2-clause BSD'
+          pretty_name: '2-clause BSD',
           other_names: ['BSD-2', 'Simplified BSD License', '2-clause BSD', 'BSD-2-Clause', 'FreeBSD License'],
           url:         'https://en.wikipedia.org/wiki/BSD_licenses#2-clause_license_(%22Simplified_BSD_License%22_or_%22FreeBSD_License%22)',
           matcher:     matcher
